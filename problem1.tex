@@ -1,0 +1,44 @@
+\section{伪代码}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{cc}
+\toprule
+\textbf{代码} & \textbf{含义} \\
+\midrule
+\verb|\;| & 行末分号, 自动换行 \\
+\verb|\caption{}| & 算法标题 \\
+\verb|\KwIn{信息}| & 效果为: “In: 信息” \\
+\verb|\KwOut{信息}| & 效果为: “Out: 信息” \\
+\verb|\For{条件}{循环语句}| & for 条件 do 循环语句 endo \\
+\verb|\If{条件}{语句}| & if 条件 then 语句 end \\
+\verb|\Else{语句}| & else 语句 end \\
+\verb|\While{条件}{循环语句}| & while 条件 then 循环语句 end \\
+\verb|\Return{值}| & return 值 \\
+\verb|\tcc{注释}| & /* 注释 */ \\
+\verb|\tcp{注释}| & // 注释 \\
+\bottomrule
+\end{tabular}
+\caption{伪代码写法}
+\end{table}
+
+\noindent 效果展示:
+
+\begin{algorithm}[H]
+\caption{最大连续子数组和 MaxSubArray($X, low, high$)}
+\KwIn{数组 $X$, 数组下标 $low, high$}
+\KwOut{最大连续子数组和 $S_{\max}$}
+\If{$low = high$}{
+    \Return $X[low]$
+}
+\Else{
+    $mid \leftarrow \lfloor \frac{low + high}{2} \rfloor$\;
+    $S_1 \leftarrow$ MaxSubArray($X, low, mid$)\;
+    $S_2 \leftarrow$ MaxSubArray($X, mid + 1, high$)\;
+    $S_3 \leftarrow$ CrossingSubArray($X, mid, low, high$)\;
+    $S_{\max} \leftarrow \max\{S_1, S_2, S_3\}$\;
+    \Return{$S_{\max}$}
+}
+\end{algorithm}
+
+\noindent 注意: 需要 \verb|$$| 才能显示数学字符

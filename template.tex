@@ -1,0 +1,52 @@
+% template.tex
+
+% 引入必要的包
+\usepackage{amsmath, amssymb, amsfonts, amsthm}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[ruled, linesnumbered]{algorithm2e} % 伪代码
+\usepackage{booktabs} % 三线表
+\usepackage{titlesec} % 自定义章节标题样式
+\usepackage{ctex}
+\usepackage{xeCJK}
+\usepackage{xcolor} % 代码高亮
+
+% 图片目录
+\graphicspath{{figures/}}
+
+% 页面布局
+\usepackage[a4paper,top=1.5cm,bottom=1.5cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+
+% 代码高亮
+\definecolor{shenqingse}{HTML}{008B8B}  % 深青色, 代码关键字
+\definecolor{shenhailv}{HTML}{8FBC8F}   % 深海绿色, 字符串
+\definecolor{grey}{HTML}{A0A0A0}    % 灰色, 注释
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{shenqingse},
+    commentstyle=\color{grey},
+    stringstyle=\color{shenhailv},
+    numbers=left,
+    numberstyle=\tiny,
+    numbersep=6pt,
+    frame=single,
+    breaklines=true,
+    showstringspaces=false,
+    captionpos=b    % 标题放在底部, 若要顶部用 t
+}
+
+% 自定义标题样式: 居中
+\titleformat{\section}[block]{\centering\Large\bfseries}{\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{0.5\baselineskip}{0.5\baselineskip}
+
+%%%%%%%%%%%%%%% 请修改为自己的个人信息
+% 个人信息 
+\newcommand{\myId}{23378888}
+\newcommand{\myName}{灰太狼}
+
+%%%%%%%%%%%%%%% 每次都要修改
+% 作业信息
+\newcommand{\myHomeworkId}{1}     
+\title{\heiti \textbf{算法设计与分析第 \myHomeworkId 次作业}}
+
+\author{\myId \quad \myName}
